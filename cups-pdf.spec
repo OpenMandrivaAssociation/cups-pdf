@@ -1,7 +1,7 @@
 Summary:        Extension for creating pdf-Files with CUPS
 Name:           cups-pdf
-Version:        2.5.0
-Release:        %mkrel 3
+Version:        2.5.1
+Release:        %mkrel 1
 Group:          System/Printing 
 Source0:        http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/%{name}_%{version}.tar.gz
 Patch1:         cups-pdf-conf.patch
