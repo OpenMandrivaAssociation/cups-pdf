@@ -99,3 +99,27 @@ fi
 %config(noreplace) %{ETCCUPS}/cups-pdf.conf
 %{_datadir}/cups/model/CUPS-PDF.ppd
 
+
+
+%changelog
+* Mon Jun 04 2012 Sergey Zhemoitel <serg@mandriva.org> 2.6.1-1
++ Revision: 802321
+- update to 2.6.1
+
+* Tue Mar 15 2011 Stéphane Téletchéa <steletch@mandriva.org> 2.5.1-1
++ Revision: 645099
+- update to new version 2.5.1
+
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 2.5.0-3mdv2011.0
++ Revision: 617480
+- the mass rebuild of 2010.0 packages
+
+* Thu Sep 10 2009 Thierry Vignaud <tv@mandriva.org> 2.5.0-2mdv2010.0
++ Revision: 437165
+- rebuild
+
+* Thu Mar 19 2009 Frederik Himpe <fhimpe@mandriva.org> 2.5.0-1mdv2009.1
++ Revision: 357560
+- Import package, based on Fedora RPM
+- create cups-pdf
+
