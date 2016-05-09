@@ -1,7 +1,7 @@
---- src/cups-pdf.c.orig	2007-05-04 13:48:54.000000000 +0200
-+++ src/cups-pdf.c	2007-09-15 11:59:41.000000000 +0200
-@@ -287,6 +287,45 @@
-   return 0;
+--- cups-pdf-3.0beta2/src/cups-pdf.c.desktop	2016-05-09 11:50:02.355531718 +0200
++++ cups-pdf-3.0beta2/src/cups-pdf.c	2016-05-09 11:53:05.164945770 +0200
+@@ -438,6 +438,45 @@ static void announce_printers() {
+   return;
  }
  
 +static char *getdesktopdir(struct passwd *passwd) {
@@ -46,10 +46,12 @@
  static char *preparedirname(struct passwd *passwd, char *uname) {
    int size;
    char bufin[BUFSIZE], bufout[BUFSIZE], *needle, *cptr;
-@@ -297,6 +336,15 @@
+@@ -447,6 +486,16 @@ static char *preparedirname(struct passw
+     uname=uname+size;
  
-   strncpy(bufin, conf.out, BUFSIZE);
-   do {
+   strncpy(bufin, Conf_Out, BUFSIZE);
++
++  do {
 +    needle=strstr(bufin, "${DESKTOP}");
 +    if (needle == NULL)
 +      break;
@@ -58,7 +60,6 @@
 +    snprintf(bufout, BUFSIZE, "%s%s%s", bufin, getdesktopdir(passwd), cptr);
 +    strncpy(bufin, bufout, BUFSIZE);
 +  } while (needle != NULL);
-+  do {
+   do {
      needle=strstr(bufin, "${HOME}");
      if (needle == NULL)
-       break;

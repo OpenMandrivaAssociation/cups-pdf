@@ -1,17 +1,10 @@
---- extra/cups-pdf.conf.oldconf	2007-05-04 13:54:49.000000000 +0200
-+++ extra/cups-pdf.conf	2007-11-24 16:15:12.000000000 +0100
-@@ -36,11 +36,14 @@
- ##  special qualifiers: 
- ##     ${HOME} will be expanded to the user's home directory
- ##     ${USER} will be expanded to the user name
-+##  Add for Fedora (~/.config/user-dirs.dirs)
-+##     ${DESKTOP} will be expanded to the user's desktop directory
- ##  in case it is an NFS export make sure it is exported without
- ##  root_squash! 
+--- cups-pdf-3.0beta2/extra/cups-pdf.conf.oldconf	2016-05-09 11:48:19.323951398 +0200
++++ cups-pdf-3.0beta2/extra/cups-pdf.conf	2016-05-09 11:49:03.657771042 +0200
+@@ -49,6 +49,7 @@
  ### Default: /var/spool/cups-pdf/${USER}
  
  #Out /var/spool/cups-pdf/${USER}
 +Out ${DESKTOP}
  
- ### Key: AnonDirName
+ ### Key: AnonDirName (config)
  ##  ABSOLUTE path for anonymously created PDF files
