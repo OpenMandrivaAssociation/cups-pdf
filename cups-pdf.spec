@@ -49,7 +49,7 @@ user. This behavior can be changed by editing the configuration file.
 
 %prep
 %setup -q -n %{name}-%{version}%{pre}
-%apply_patches
+%autopatch -p1
 
 mkdir contrib
 cd contrib
