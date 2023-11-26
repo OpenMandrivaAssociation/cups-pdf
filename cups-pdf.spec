@@ -1,23 +1,20 @@
-%define pre beta2
+#define beta beta2
 
 Summary:        Extension for creating pdf-Files with CUPS
 Name:           cups-pdf
-Version:        3.0
-%if "%{pre}" != ""
-Release:	0.%{pre}.1
-%else
-Release:        1
-%endif
+Version:        3.0.1
+Release:        %{?beta:0.%{beta}.}1
 Group:          System/Printing 
-Source0:        http://cups-pdf.de/src/%{name}_%{version}%{pre}.tar.gz
-Source1:	http://cups-pdf.de/contrib/n_kondrashov/pstitleiconv_0.2.tar.gz
-Source2:	http://cups-pdf.de/contrib/n_kondrashov/cups-pdf-dispatch_0.1.tar.gz
+Source0:        https://www.cups-pdf.de/src/cups-pdf_%{version}%{?beta:%{beta}}.tar.gz
+Source1:	https://www.cups-pdf.de/contrib/n_kondrashov/pstitleiconv_0.2.tar.gz
+Source2:	https://www.cups-pdf.de/contrib/n_kondrashov/cups-pdf-dispatch_0.1.tar.gz
 Patch1:         cups-pdf-conf.patch
 Patch2:         cups-pdf-desktop.patch
+# https://github.com/alexivkin/CUPS-PDF-to-PDF
+Patch3:		pdf-passthrough.patch
 URL:            http://cups-pdf.de/
 # Mirror: http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
 License:        GPLv2+
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:       ghostscript
 Requires:       cups
 BuildRequires:  cups-devel
@@ -48,8 +45,7 @@ This version has been modified to store the PDF files on the Desktop of the
 user. This behavior can be changed by editing the configuration file.
 
 %prep
-%setup -q -n %{name}-%{version}%{pre}
-%autopatch -p1
+%autosetup -p1 -n %{name}-%{version}%{?beta:%{beta}}
 
 mkdir contrib
 cd contrib
