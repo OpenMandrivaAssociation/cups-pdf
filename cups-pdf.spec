@@ -12,7 +12,7 @@ Patch1:         cups-pdf-conf.patch
 Patch2:         cups-pdf-desktop.patch
 # https://github.com/alexivkin/CUPS-PDF-to-PDF
 Patch3:		pdf-passthrough.patch
-URL:            http://cups-pdf.de/
+URL:            https://cups-pdf.de/
 # Mirror: http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
 License:        GPLv2+
 Requires:       ghostscript
